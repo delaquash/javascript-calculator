@@ -8,28 +8,27 @@
     <title>Calculator</title>
 </head>
 <body>
+    <h1>Calculator</h1>
     <div id="calc-parent">
          <div class="row">
-
-        </div>
+             <div class="column" id="calc-display-val">0</div>
+         </div>
          <div class="row">
              <div class="calc-btn column" id="calc-clear">AC</div>
-             <div class="calc-btn column" id="calc-backspace"></div>
-
-
+             <div class="calc-btn column" id="calc-backspace">&#8676;</div>
+             <div class="calc-btn calc-btn-operator column" id="calc-divide">&#247;</div>
         </div>
         <div class="row">
-<div class="calc-btn calc-btn-num column" id="calc-seven">7</div>
-        <div class="calc-btn calc-btn-num column" id="calc-eight">8</div>
+            <div class="calc-btn calc-btn-num column" id="calc-seven">7</div>
+            <div class="calc-btn calc-btn-num column" id="calc-eight">8</div>
             <div class="calc-btn calc-btn-num column" id="calc-nine">9</div>
-            <div class="calc-btn calc-btn-operator column" id="calc-multiply">X</div>
+            <div class="calc-btn calc-btn-operator column" id="calc-multiply">x</div>
         </div>
         <div class="row">
             <div class="calc-btn calc-btn-num column" id="calc-four">4</div>
             <div class="calc-btn calc-btn-num column" id="calc-five">5</div>
-            <div class="calc-btn calc-btn-num column" id="calc-six">6<div>  
+            <div class="calc-btn calc-btn-num column" id="calc-six">6</div> 
             <div class="calc-btn calc-btn-operator column" id="calc-minus">-</div>
-
         </div>
          <div class="row">
              <div class="calc-btn calc-btn-num column" id="calc-one">1</div>
@@ -39,12 +38,50 @@
         </div>
          <div class="row">
              <div class="calc-btn calc-btn-num column" id="calc-zero">0</div>
-                <div class="calc-btn column" id="calc-decimal">7</div>
+                <div class="calc-btn column" id="calc-decimal">.</div>
                 <div class="calc-btn calc-btn-operator column" id="calc-equals">=</div>
         </div>
         
     </div>
     
-<script src="main.js"></script>
+    <script>
+            var oneBtn = document.getElementById('calc-one');
+            var twoBtn = document.getElementById('calc-two');
+            var threeBtn = document.getElementById('calc-three');
+            var fourBtn = document.getElementById('clac-four');
+            var fiveBtn = document.getElementById('calc-five');
+            var sixBtn = document.getElementById('cal-six');
+            var sevenBtn = document.getElementById('calc-seven');
+            var eightBtn = document.getElementById('calc-eight');
+            var nineBtn = document.getElementById('calc-nine');
+            var nineBtn = document.getElementById('calc-zero');
+
+            var decimalBtn = document.getElementById('calc-decimal');
+            var clearBtn = document.getElementById('calc-clear');
+            var backspaceBtn = document.getElementById('calc-backspace');
+            var displayValElement = document.getElementById('cal-display-val');
+
+
+            var displayVal = '0';
+            var pendingVal;
+            var evalStringArray = [];
+
+            var calcNumBtns = document.getElementsByClassName ('calc-btn-num');
+            var calcOperatorBtns = document.getElementsByClassName('calc-btn-operator');
+
+            var updateDisplayVal = (clickObj) => {
+                var btnText = clickObj.target.innerText;
+            if(display === '0')
+            displayVal ='';
+
+            displayVal += btnText;
+            displayValElement.innerText =  displayVal;
+                }
+            for (let i = 0; i < calcNumBtns.length; i++){
+                calcNumBtns[i].addEventListener('click', updateDisplayVal, false);
+            }
+
+
+    </script>
 </body>
 </html>
