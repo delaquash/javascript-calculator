@@ -6,7 +6,7 @@ body {
 .calc-btn{
     color:black;
     width:25px;
-    height:45px;
+    height:85px;
     background-color:silver;
     border: 1px solid grey;
     text-align:center;
@@ -16,17 +16,18 @@ body {
     padding-top: 3px;
 }
  .calc-btn:hover {
-     background-color: orange;
+     background-color: blue;
  }
  .row {
      display: table;
      table-layout: fixed;
-     width: 200px;
+     width: 300px;
  }
  .column{
      display: table-cell;
  }
  #calc-zero{
+     font-weight: bold;
     border-radius: 0, 0, 0, 7px;
     width: 52.66666667px;
  }
@@ -54,6 +55,8 @@ body {
     background-color: orange;
  }
 h1{
+    font-style: italic;
+    font-family: cursive;
     text-align: center;
     margin-top:50px;
 }
